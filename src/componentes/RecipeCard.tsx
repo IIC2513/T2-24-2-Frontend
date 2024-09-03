@@ -41,9 +41,10 @@ const RecipeCard: React.FC<RecipeProps> = ({ id, title, image, description, ingr
                   src={image}
                   alt={title}
 
-                  width={600} 
-                  height={400} 
-                  className="mb-4 rounded-md "
+                  width={500} 
+                  height={100} 
+                  className="mb-4 rounded-md"
+                  
                 />
                 <h2 className="text-2xl font-bold">{title}</h2>
                 <p>{description}</p>

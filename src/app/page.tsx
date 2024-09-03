@@ -141,7 +141,13 @@ export default function Home() {
           </select>
         {loading && <p>Loading...</p>}
         {!loading && (
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-3 gap-4 mt-4"
+          style={{
+            marginTop: "2rem",
+            marginBottom: "2rem",
+            marginLeft: "10rem",
+            marginRight: "10rem",
+          }}>
             {currentRecipes.map((recipe) => (
               <RecipeCard
                 id={recipe.id}

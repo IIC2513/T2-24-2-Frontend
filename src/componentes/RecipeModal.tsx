@@ -83,7 +83,13 @@ const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, onClose }) => {
                 }}
             >
                 {isEditing ? (
-                    <>
+                    <div
+                    style={{
+                        // padding: "1rem",
+                        borderRadius: "0.5rem",
+                        maxWidth: "100%", 
+                        width: "800px"
+                    }}>
                         <h2 className="text-2xl font-bold mb-4">Edit {recipe.title}</h2>
                         <input
                             type="text"
@@ -156,7 +162,7 @@ const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, onClose }) => {
                                 Cancel
                             </button>
                         </div>
-                    </>
+                    </div>
                 ) : (
                     <>
                             <img src={recipe.image} alt={recipe.title} className="w-full object-cover mb-4 rounded-md" 
@@ -173,16 +179,16 @@ const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, onClose }) => {
                             </button>
                         </div>
                         <p className="mb-4">{recipe.description}</p>
-                        <h3 className="text-xl font-semibold mb-2">Ingredients:</h3>
+                        <h3 className="text-xl font-semibold mb-2"><strong>Ingredients</strong>:</h3>
                         <ul className="list-disc list-inside mb-4">
                             {recipe.ingredients.map((ingredient, index) => (
-                                <li key={index}>{ingredient}</li>
+                                <li key={index}>- {ingredient}</li>
                             ))}
                         </ul>
-                        <h3 className="text-xl font-semibold mb-2">Steps:</h3>
+                        <h3 className="text-xl font-semibold mb-2"><strong>Steps:</strong></h3>
                         <ol className="list-decimal list-inside mb-4">
                             {recipe.steps.map((step, index) => (
-                                <li key={index}>{step}</li>
+                                <li key={index}>{index+1}. {step}</li>
                             ))}
                         </ol>
                         <p><strong>Preparation Time:</strong> {recipe.preparation_time_in_minutes} minutes</p>
