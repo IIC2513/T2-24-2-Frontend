@@ -4,24 +4,32 @@ import Image from 'next/image';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-stretch items-center">
-        <div className="flex  text-white text-2xl font-bold">
-          <Link href="/">DCChef</Link>
-          <Image className="spacing" src="/chef-icon.png" alt="Chef" width={50} height={50} />
+    <nav className="bg-gray-900 p-4 shadow-md">
+      <div className="bg-gray-900 container mx-auto flex items-center justify-between ">
+        <div className="flex items-center space-x-4">
+          <Image src="/chef-icon.png" alt="Chef" width={40} height={40} />
+          <Link href="/" className="text-white text-4xl  font-bold">
+            DCChef
+          </Link>
         </div>
-        <ul className="flex ">
+        <ul 
+        className="flex space-x-8"
+        style={{
+          padding: "10px",
+        }}
+        >
           <li>
-            <Link href="/" className="text-gray-300 hover:text-white">Home</Link>
+            <Link href="/" className="text-gray-300 text-4xl hover:text-white">
+              Recipes
+            </Link>
           </li>
           <li>
-            <Link href="/recipes" className="text-gray-300 hover:text-white">Recipes</Link>
+            <p className="text-gray-300 text-4xl">|</p>
           </li>
           <li>
-            <Link href="/about" className="text-gray-300 hover:text-white">About</Link>
-          </li>
-          <li>
-            <Link href="/contact" className="text-gray-300 hover:text-white">Contact</Link>
+            <Link href="/create" className="text-gray-300 text-4xl hover:text-white">
+              Create
+            </Link>
           </li>
         </ul>
       </div>
@@ -30,3 +38,5 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
+
