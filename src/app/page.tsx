@@ -59,6 +59,12 @@ export default function Home() {
     setPage(1);
   };
 
+  const clearSearch = () => {
+    setSearchQuery("");
+    setFilteredRecipes(recipes);
+    setPage(1);
+  }
+
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCategory(event.target.value);
     if (event.target.value === "") {
@@ -115,6 +121,13 @@ export default function Home() {
             className="p-2 bg-blue-500 text-white rounded-md ml-2">
             Search
           </button>
+          {searchQuery && (
+            <button
+              onClick={clearSearch}
+              className="p-2 bg-red-500 text-white rounded-md ml-2">
+              Clear 
+            </button>
+          )}
         </div>
         <select
             value={selectedCategory}
